@@ -9,13 +9,13 @@ export default defineConfig({
       "/api": {
         target: "http://demo-api.syaifur.io",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        rewrite: (path) => path.replace(/^\/api/, "/api"), // Keep `/api` intact for the backend
       },
       "/geni": {
         target: "https://api.tugas-cool.my.id",
         changeOrigin: true,
-        secure: true, // Set to `true` if the SSL certificate is valid
-        rewrite: (path) => path.replace(/^\/geni/, ""),
+        secure: true,
+        rewrite: (path) => path.replace(/^\/geni/, "/geni"), // Keep `/geni` intact for the backend
       },
     },
   },
