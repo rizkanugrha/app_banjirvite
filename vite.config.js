@@ -6,10 +6,16 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/geni": {
-        target: "https://api.tugas-cool.my.id/",
+      "/api": {
+        target: "http://demo-api.syaifur.io",
         changeOrigin: true,
-        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+      "/geni": {
+        target: "https://api.tugas-cool.my.id",
+        changeOrigin: true,
+        secure: true, // Set to `true` if the SSL certificate is valid
+        rewrite: (path) => path.replace(/^\/geni/, ""),
       },
     },
   },
