@@ -1,16 +1,17 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+// vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
   server: {
     proxy: {
-      "/geni": {
-        target: "https://apis-beta-peach.vercel.app",
+      '/geni': {
+        target: mode === 'production' ? 'http://api.tugas-cool.my.id' : 'http://localhost:3000',
         changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/geni/, ''),
         secure: false,
       },
     },
   },
-});
+}));

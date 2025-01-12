@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+      {
+        "source": "/geni/:path*",
+        "destination": "https://api.tugas-cool.my.id/:path*"
+      },
+      {
+        "source": "/(.*)",
+        "destination": "/index.html"
+      }
+    ]
+  }
