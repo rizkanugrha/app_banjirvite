@@ -14,7 +14,7 @@ const Homepage = () => {
   return (
     <DashboardLayout>
       <h1 className="text-2xl font-bold">Dashboard Utama</h1>
-      <p className="mt-4">Selamat datang di dashboard utama BPBD Kabupaten Batang.</p>
+      <p className="mt-4">Selamat datang di Sistem Informasi Pantauan Bencana By Rizka Nugraha.</p>
 
       {/* Contoh Tabel */}
       <div className="mt-6">
